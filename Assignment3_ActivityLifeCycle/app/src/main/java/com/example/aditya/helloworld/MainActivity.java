@@ -3,6 +3,7 @@ package com.example.aditya.helloworld;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -19,10 +20,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        b = (Button) findViewById(R.id.button);
-        TextView t = (TextView) findViewById(R.id.tt);
-        final Toast toast;
-        toast = makeText(this, "CREATED", Toast.LENGTH_SHORT);
+        Toast toast= Toast.makeText(getApplicationContext(),
+                "Look Toast is in Centre !", Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.CENTER|Gravity.CENTER_HORIZONTAL, 0, 0);
         toast.show();
 
 
